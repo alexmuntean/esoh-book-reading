@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session.clear
     session[:user_id] = nil
     session[:info] = env["omniauth.auth"]
     

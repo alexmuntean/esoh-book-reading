@@ -12,9 +12,9 @@
       <ul class="users-list clearfix">
         <% @users.each do |user| %>
           <li>
-            <img src="<%= user.image %>" alt="User Image"/>
+            <img src="<%= user.image.gsub('50', '160') %>" alt="User Image"/>
             <a class="users-list-name" href="#"><%= user.name %></a>
-            <span class="users-list-date">Today</span>
+            <span class="users-list-date"><%= user.creation_date.today? ? "Today" : time_ago_in_words(user.creation_date) %></span>
           </li>
         <% end %>
       </ul><!-- /.users-list -->

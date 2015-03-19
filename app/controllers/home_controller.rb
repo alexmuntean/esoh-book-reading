@@ -1,12 +1,14 @@
 class HomeController < ApplicationController
-  def login
-
-  end
-
   def index
-    @title = "Dashboard"
-    @description = ""
+    if current_user
+      @title = "Dashboard"
+      @description = ""
+      
+      @users = User.last(8).reverse
 
-    @users = User.last(8)
+      render 'homepage'
+      return
+    end
+    render 'index'
   end
 end

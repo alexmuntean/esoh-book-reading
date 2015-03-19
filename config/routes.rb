@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'authentication#logout'
 
   get 'members/list'
+  get 'members/:id' => 'members#details', as: :members_details
 
   resources :authentication, only: [:create, :destroy]
   resource :home, only: [:index]

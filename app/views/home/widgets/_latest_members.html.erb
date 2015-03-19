@@ -13,7 +13,7 @@
         <% @users.each do |user| %>
           <li>
             <img src="<%= user.image.gsub('50', '160') %>" alt="User Image"/>
-            <a class="users-list-name" href="#"><%= user.name %></a>
+            <%= link_to(user.first_name, members_details_path(id: user.id), class: 'users-list-name') %>
             <span class="users-list-date"><%= user.creation_date.today? ? "Today" : time_ago_in_words(user.creation_date) %></span>
           </li>
         <% end %>

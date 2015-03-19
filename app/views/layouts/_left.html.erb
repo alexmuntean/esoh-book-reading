@@ -10,7 +10,7 @@
         <img src="<%= current_user.image.gsub('50', '160') %>" class="img-circle" alt="User Image" />
       </div>
       <div class="pull-left info">
-        <p><%= current_user.name %></p>
+        <p><%= current_user.full_name %></p>
         <!-- Status -->
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
@@ -49,7 +49,7 @@
       </li>
 
       <li class="header">MEMBERS</li>
-      <li><a href="#">Members</a></li>
+      <li><%= link_to "Members", members_list_path %></li>
     </ul><!-- /.sidebar-menu -->
 
   </section>

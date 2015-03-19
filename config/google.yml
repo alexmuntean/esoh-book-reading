@@ -1,0 +1,6 @@
+development:
+  client_id: "343160323049-ia8oqb7ccme6vqh5dc0qlphtpd0iqpji.apps.googleusercontent.com"
+  secret: "-GOLZ1AYW3CMI5Pr4q54CIyh"
+production:
+  client_id: "827414928786-kpu4lhh2h89aou5v7sdfc1gghdn3c9e3.apps.googleusercontent.com"
+  secret: "ZUHdr7rgENI7xbb5fP4GtwKa"

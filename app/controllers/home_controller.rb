@@ -6,5 +6,7 @@ class HomeController < ApplicationController
   def index
     @title = "Dashboard"
     @description = ""
+
+    @users = User.last(8)
   end
 end

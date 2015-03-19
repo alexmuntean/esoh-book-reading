@@ -1,8 +1,11 @@
 OmniAuth.config.logger = Rails.logger
 
+GOOGLE_CONFIG = YAML.load_file("#{::Rails.root}/config/google.yml")[::Rails.env]
+
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :google_oauth2, '827414928786-kpu4lhh2h89aou5v7sdfc1gghdn3c9e3.apps.googleusercontent.com', 'ZUHdr7rgENI7xbb5fP4GtwKa', 
+  provider :google_oauth2, GOOGLE_CONFIG['client_id'], GOOGLE_CONFIG['secret'], 
   {
-    client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}}
+    :image_aspect_ratio => "square",
+    :image_size => 160
   }
 end
